@@ -1,2 +1,2 @@
 # qa_website
-A questions ans answers website built using deno and oak.
+A questions and answers website built using deno and oak framework.
