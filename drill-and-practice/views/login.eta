@@ -1,0 +1,12 @@
+<% layout("./layouts/layout.eta") %>
+
+<h1>Login form</h1>
+<div class="form-group">
+    <form method="POST" action="/auth/login">
+    Email:<br/>
+    <input type="email" name="email" /><br/>
+    Password:<br/>
+    <input type="password" name="password" /><br/>
+    <input type="submit" value="Login" class="btn btn-primary"/>
+    </form>
+</div>

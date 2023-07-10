@@ -1,0 +1,22 @@
+<% layout("./layouts/layout.eta") %>
+<div class="form-group">
+    <form method="POST" action="/topics/<%= it.topicId %>/questions">
+        Name: <br/>
+        <input type="text" name="question_text"/>
+        <input type="submit" value="Add question" class="btn btn-primary"/>
+    </form>
+</div>
+
+
+<% if (it.questions) {%>
+<ul>
+    <% it.questions.forEach((question) => {%>
+    <li><a href="/topics/<%= it.topicId %>/questions/<%= question.id %>"><%= question.question_text %></a></li>
+    <% }); %>
+</ul>
+<% };%>
+
+<% if (it.error) { %>
+<p><%= it.error %></p>
+
+<% };%>

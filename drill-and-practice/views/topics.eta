@@ -1,0 +1,37 @@
+<% layout("./layouts/layout.eta") %>
+
+<h1>Welcome to topics</h1>
+
+
+
+<% if ( it.admin == true) {%>
+
+    <ul>
+    <% it.topics.forEach((topic) => { %>
+        <li><a href="/topics/<%= topic.id %>"><%= topic.name %></a></li>
+        <form method="POST" action="/topics/<%= topic.id %>/delete">
+            <input type="submit" value="Delete" class="btn btn-primary"/>
+        </form>
+    <% }); %>
+    </ul>
+
+    <form method="POST" action="/topics">
+        Name: <br/>
+        <input type="text" name="name" value ="<%=it.name%>"/><br>
+        <input type="submit" value="addTopic" class="btn btn-primary"/>
+    </form>
+
+    
+<% } else { %>
+
+<ul>
+    <% it.topics.forEach((topic) => { %>
+        <li><a href="/topics/<%= topic.id %>"><%= topic.name %></a></li>
+    <% }); %>
+</ul>
+
+<% }; %>
+
+<% if (it.errors) { %>
+<p> <%= it.errors %></p>
+<% }; %>

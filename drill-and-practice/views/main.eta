@@ -1,0 +1,16 @@
+<% layout("./layouts/layout.eta") %>
+
+<h1>Question management program</h1>
+
+
+<a href="/auth/register">Register account</a></br>
+<a href="/auth/login">Login to account</a>
+
+<h2>Amount of topics</h2>
+<p><%= it.topicAmount%></p>
+
+<h2>Amount of questions</h2>
+<p><%= it.questionAmount%></p>
+
+<h2>Amount of answers</h2>
+<p><%= it.answerAmount%></p>
